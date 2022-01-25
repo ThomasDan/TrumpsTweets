@@ -17,7 +17,12 @@ export class TweetComponent implements OnInit {
 
   ngOnInit(): void {
     let date = new Date(this.tweet.date);
-    this.stringedDate = date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds() + "  " + date.getDate() + '/' + (date.getMonth() + 1) + '-' + date.getFullYear();
+    let hours = date.getHours();
+    let mins = date.getMinutes();
+    let secs = date.getSeconds();
+    let day = date.getDate();
+    let month = date.getMonth()+1;
+    this.stringedDate = (hours < 10? '0' : '') + hours + ':' + (mins < 10 ? '0' : '') + mins + ':' + (secs < 10 ? '0' : '') + secs + "  " + (day < 10 ? ' ' : '') + day + '/' + (month < 10 ? '0' : '') + month + '-' + date.getFullYear();
   }
 
 }
