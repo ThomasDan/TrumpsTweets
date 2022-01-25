@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-tweet',
@@ -6,18 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tweet.component.css']
 })
 export class TweetComponent implements OnInit {
-  date: Date;
-  message: string;
-  likes: number;
+  @Input() date: Date = new Date('10-11-2001 12:13:14');
+  @Input() message: string = 'Message not found!';
+  @Input() likes: number = -1;
+  stringedDate: string;
 
-  constructor(date: Date, message: string, likes: number)
+  constructor()
   {
-    this.date = date;
-    this.message = message;
-    this.likes = likes;
+
   }
 
   ngOnInit(): void {
+    this.stringedDate = this.date.getHours() + ':' + this.date.getMinutes() + ':' + this.date.getSeconds() + "  " + this.date.getDate() + '/' + (this.date.getMonth()+1) + '-' + this.date.getFullYear();
   }
 
 }
