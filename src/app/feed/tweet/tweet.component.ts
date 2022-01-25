@@ -6,8 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tweet.component.css']
 })
 export class TweetComponent implements OnInit {
+  date: Date;
+  message: string;
+  likes: number;
 
-  constructor() { }
+  constructor(date: Date, message: string, likes: number)
+  {
+    this.date = date;
+    this.message = message;
+    this.likes = likes;
+  }
 
   ngOnInit(): void {
   }
