@@ -6,7 +6,7 @@
   <div class="col-6">
     <h1 class="text-white text-center" style="border-bottom: lightblue 4px solid;">Trump's Tweets</h1>
     <div class="row">
-      <app-tweet *ngFor="let tweet of tweets" [date]="tweet.date" [message]="tweet.message" [likes]="tweet.likes">
+      <app-tweet class="col-6" *ngFor="let tweet of tweets" [tweet]="tweet">
       </app-tweet>
     </div>
   </div>

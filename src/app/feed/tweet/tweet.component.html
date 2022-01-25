@@ -1,5 +1,8 @@
-<div class="col-6 text-white" style="border-bottom:gold 2px solid; margin: 5px; background-color: rgba(50, 50, 50, 0.25);">
+<div class="text-white" style="border-bottom:gold 2px solid; margin: 2px; padding: 4px; background-color: rgba(50, 50, 50, 0.25);">
   <h5 style="border-bottom:gold 2px solid; padding-bottom: 2px;">Donald Trump<br>{{stringedDate}}<br><span style="font-size: 10px;">(@TheRealDonaldTrump)</span></h5>
-  <p>{{message}}</p>
-  <label>{{likes}} Likes</label>
+  <p>{{tweet.text}}</p>
+  <label *ngIf="tweet.likes < 100000">{{tweet.likes}} Likes</label>
+  <label *ngIf="tweet.likes >= 100000 && tweet.likes < 150000" style="color: rgb(255, 245, 195);">{{tweet.likes}} Likes</label>
+  <label *ngIf="tweet.likes >= 150000 && tweet.likes < 200000" style="color: rgb(255, 225, 90);">{{tweet.likes}} Likes</label>
+  <label *ngIf="tweet.likes >= 200000" style="font-weight: bolder; font-size: 24px; color: gold; border: gold 10px ridge; padding: 4px; background-color: rgba(255, 205, 0, 0.5);">{{tweet.likes}} LIKES</label>
 </div>
