@@ -1,1 +1,16 @@
-<p>feed works!</p>
+
+<div class="row text-center" style="min-height: 95vh;">
+  <div class="col-3">
+    <img style="max-width: 100%; margin-top: 10px; height: 500px;" src="../assets/images/democracy.jpg">
+  </div>
+  <div class="col-6">
+    <h1 class="text-white text-center" style="border-bottom: lightblue 4px solid;">Trump's Tweets</h1>
+    <div class="row">
+      <app-tweet *ngFor="tweets">
+      </app-tweet>
+    </div>
+  </div>
+  <div class="col-3">
+    <iframe style="max-width: 100%; margin-top: 10px; height: 500px;" src="https://www.youtube-nocookie.com/embed/dWpeOSlOTtc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
