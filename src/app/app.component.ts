@@ -17,9 +17,8 @@ export class AppComponent implements OnInit {
 
   backgroundCycle(){
     setTimeout(() => {
-      let i = Math.round(Math.random() * (this.images.length-1));
+      let i = Math.floor(Math.random() * (this.images.length));
       this.currentBackground = "url(../assets/images/" + this.images[i] + ")";
-      this.backgroundCycle();
     }, 5000);
   }
 }
